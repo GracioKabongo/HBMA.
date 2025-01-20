@@ -18,56 +18,128 @@ body{
 
 .paragrafo{
   font-family: Arial, sans-serif;
-  color: #c1e0e0 !important;
+  color: #ffffff !important;
+  font-size: 20px;  
 }
 
 .headerPosition{
     display: flex;
+    
 }
 
-.left{
-    width: 50px;  
-    height: 550px;
-    background-color: #354a56;
+.rigth {
+  background-image: url("componentes/img/pexels-tima-miroshnichenko-5439470.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;  
+  height: 650px; /* Defina uma altura para garantir que a imagem apareça */
 }
 
-.center{
-    width: 100px;  
-    height: 550px;
-    background-color: #8da8a8;
-}
 
-.rigth{
-    width: 100%;  
-    height: 550px;
-    background-color: #0a2836;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
 #logotipo{
-    width: 300px;
-    height: 100px;
+    width: 80px;
+    height: 40px;
 }
 
-.nav {
-    display: flex;
-    gap: 20px;
-    position: fixed;
-    top: 0;
+/* 🌟 Estilo padrão da navbar */
+.navbar {
+  background: #0a2836a4;;
+  transition: background 0.3s ease-in-out;
+  padding: 15px 50px; /* Ajuste de espaçamento lateral */
 }
 
-.nav-link {
-    color: #c1e0e0 !important; 
-    text-decoration: none;
-    font-size: 16px;
+/* 🌟 Navbar com fundo ao fazer scroll */
+.navbar.scrolled {
+  background: #0a2836de;
 }
 
-.nav-link:hover {
-    color: #516d7d !important; 
+/* 🌟 Estilizando os links */
+.navbar-nav .nav-item {
+  margin: 0 20px; /* Aumenta o espaçamento entre os links */
 }
+
+.navbar-nav .nav-link {
+  color: #c1e0e0 !important;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #516d7d !important;
+}
+
+/* 🌟 Botão hamburguer (para telas pequenas) */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+/* 🌟 Deixando o ícone do menu hamburguer branco */
+.navbar-toggler-icon {
+  filter: invert(1); 
+}
+
+/* 🌟 Centralizando o menu em telas grandes */
+.navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 🌟 Ajustando o tamanho máximo do container */
+.container {
+  max-width: 1200px;
+}
+
+/* 🌟 Responsividade: Menu hamburguer visível em telas pequenas */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    background-color: #0a283600;
+  }
+ 
+  .navbar-nav .nav-item {
+    margin: 10px 0; /* Espaçamento vertical para os links no menu dropdown */
+  }
+}
+
+.glass-button {
+  width: 200px;
+  height: 50px;
+  font-size: 16px;
+  
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Borda sutil */
+  background: rgba(255, 255, 255, 0.2); /* Fundo transparente */
+  backdrop-filter: blur(8px); /* Efeito de vidro fosco */ 
+  -webkit-backdrop-filter: blur(10px); /* Para compatibilidade */
+  border-radius: 5px; /* Borda arredondada */
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+ 
+/* 🌟 Efeito de hover */
+.glass-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+
+
+/* Conteúdo de Exemplo */
+.content {
+  height: 200vh; /* Para permitir rolagem */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24px;
+  padding-top: 100px;
+}
+
 
 /* Estiliza o preloader ocupando toda a tela */
 #preloader {
@@ -98,40 +170,329 @@ body{
   background-color: #0a2836;
 }
 
-.texto{
-  padding-top: 200px;
-  padding-left: 150px; 
-  padding-right: 50px;
-  padding-bottom: 200px;
+.texto{ 
+  padding-top: 350px;  
+  padding-bottom: 80px;
+  padding-left: 150px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: large;
+}
+ 
+@media (max-width: 768px) {
+  .texto{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
-.solucoes1{
+.solucoes1 {
   display: flex;
   flex-direction: row;
   background-color: #cfd8d8;
   justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.footer{
+
+
+.texto2 {
+  color: #3e515c;
+  text-align: left;
+  max-width: 500px;
+  padding: 50px 20px;
+}
+
+.texto2 h2 {
+  color: #3e515c;
+  margin-bottom: 20px;
+}
+
+.texto2 ul {
+  color: #516d7d;
+  font-size: 20px;
+  list-style: square; /* Remove os marcadores da lista */
+  padding: 0;
+}
+
+.texto2 li {
+  margin-bottom: 15px; /* Dá espaçamento entre os itens da lista */
+}
+
+.solucoes1 img {
+  height: auto;
+  width: 350px;
+  max-height: 690px;
+  padding: 50px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .solucoes1 {
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    padding: 20px;
+  }
+
+  .solucoes1 img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .texto2 {
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .texto2 ul {
+    text-align: left; /* Centraliza os itens da lista */
+  }
+}
+
+
+
+.footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: fixed; /* Fixa o background */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url(componentes/img/Picture2.png);
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center; 
-  background-attachment: fixed;   
-
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Coloca atrás do conteúdo */
 }
+
+
 
 .texto2{
-  padding-top: 700px; 
-  padding-left: 40px; 
-  padding-bottom: 40px;  
+  padding-top: 200px;    
+  padding-left: 60px;    
+  padding-bottom: 70px;   
   color: #ffff; 
 } 
 
-.rodapé{
+.rodapé {
   background-image: url(componentes/img/Picture3.png); 
-  background-size: 100%;
+  background-size: cover;
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Mantém em linha em telas grandes */
   padding: 50px;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os elementos se ajustem */
+  text-align: center;
 }
+
+/* Quando a tela for menor que 768px (exemplo), os elementos ficam na vertical */
+@media (max-width: 768px) {
+  .rodapé {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background-position: right;
+  }
+
+  .rodapé img {
+    margin-bottom: 15px; /* Adiciona espaçamento entre os elementos */
+  }
+  .rodapé img.hide-on-mobile {
+    display: none;
+  }
+}
+
+.whatsapp-link {
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold; 
+}
+
+.whatsapp-link:hover {
+  color: #25D366 !important; 
+}
+
+.hbma-link {
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold; 
+}
+
+.hbma-link:hover {
+  color: #88909a !important; 
+}
+
+.email-link {
+  color: white !important;
+  text-decoration: none;
+  font-weight: bold; 
+}
+
+.email-link:hover {
+  color: #1c7ea7 !important; 
+}
+
+.jumbotron {
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  background-color: #0a2836e6; /* Fundo escuro */
+  color: aliceblue;
+  text-align: center;
+  padding: 30px;
+  
+  margin: auto;
+  width: 90%; /* Para telas pequenas */
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 1s ease;
+  overflow: hidden; /* Evita que o scroll horizontal bugue */
+  transform-origin: center; /* Define o ponto de rotação */
+  perspective: 1000px; /* Ajusta a profundidade da rotação */
+}
+
+/* Quando visível e rolando para baixo */
+.jumbotron.rotated {
+  transform: rotateX(90deg); /* Agora gira no eixo X corretamente */
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 768px) {
+  .jumbotron {
+      width: 70%;
+      height: 300px;
+      max-width: 800px;
+      box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Estilizando o badge */
+.jumbotron .badge {
+  background-color: #516d7d;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Estilo base dos cards */
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border: 1.5px solid #6d738f;
+  border-radius: 8px;
+  background-color: #04112245;
+  color: #c1e0e0;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.479);
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+/* Efeito de luz */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: var(--mouse-y, -50%);
+  left: var(--mouse-x, -50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* A luz aparece dinamicamente no hover */
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Estilo para o link "Saiba mais" */
+.saiba-mais {
+  display: inline-block;
+  margin-top: 10px;
+  color: #516d7d; /* Cor da seta */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.saiba-mais:hover {
+  text-decoration: underline;
+}
+
+.section2{
+  padding-top: 55px;
+  padding-bottom: 80px; 
+} 
+
+.form-container {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.728);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 16px rgba(0, 0, 0, 0.676);
+}
+
+.btn-submit {
+  background-color: #636866;
+  color: #f7f7f7;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.rigthServices{
+  background-color: #0a2836;
+  background-image: url(componentes/img/pexels-josh-hild-1270765-19543998.jpg); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;  
+  height: 700px;  
+}
+
+.textoServices{
+  padding-top: 250px;  
+  padding-left: 40px;  
+  padding-right: 170px; 
+}
+
+@media (max-width: 768px) {
+  .textoServices{
+    padding-top: 170px; 
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.mainServices{
+  background-color: #0a2836;
+  padding: 40px;  
+  display: flex;
+
+}
+
