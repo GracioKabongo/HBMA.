@@ -1,10 +1,10 @@
 window.onload = function () {
     setTimeout(function () {
-        document.getElementById("preloader").style.display = "none"; 
-        document.getElementById("content").style.display = "block"; 
-    }, 1500); 
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }, 1500);
 };
-   
+
 
 // Mudança da cor da navbar ao rolar para baixo
 window.addEventListener("scroll", function () {
@@ -20,45 +20,45 @@ window.addEventListener("scroll", function () {
 // Captura o componente jumbotron
 const jumbotron = document.querySelector('.jumbotron');
 
-    let lastScrollTop = 0; // Posição do scroll anterior
+let lastScrollTop = 0; // Posição do scroll anterior
 
-    window.addEventListener('scroll', function() {
-        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+window.addEventListener('scroll', function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-        if (currentScroll > lastScrollTop) {
-            // Rolando para baixo (deitar o componente para trás)
-            jumbotron.classList.add('rotated');
-        } else {
-            // Rolando para cima (levantar o componente)
-            jumbotron.classList.remove('rotated');
-        }
+    if (currentScroll > lastScrollTop) {
+        // Rolando para baixo (deitar o componente para trás)
+        jumbotron.classList.add('rotated');
+    } else {
+        // Rolando para cima (levantar o componente)
+        jumbotron.classList.remove('rotated');
+    }
 
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar números negativos
-    });
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar números negativos
+});
 
 
- // Adicionar o efeito dinâmico da luz
+// Adicionar o efeito dinâmico da luz
 document.querySelectorAll('.service-card').forEach(card => {
     card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-  
-      // Atualiza as propriedades CSS dinâmicas
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
-    });
-  
-    card.addEventListener('mouseleave', () => {
-      // Ao sair, a luz desaparece
-      card.style.setProperty('--mouse-x', `-9999px`);
-      card.style.setProperty('--mouse-y', `-9999px`);
-    });
-  });
-  
-    
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-  document.addEventListener("DOMContentLoaded", function () {
+        // Atualiza as propriedades CSS dinâmicas
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+
+    card.addEventListener('mouseleave', () => {
+        // Ao sair, a luz desaparece
+        card.style.setProperty('--mouse-x', `-9999px`);
+        card.style.setProperty('--mouse-y', `-9999px`);
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
     function revealOnScroll() {
         const section = document.querySelector(".solucoes1");
         const sectionTop = section.getBoundingClientRect().top;
@@ -93,6 +93,15 @@ document.addEventListener("DOMContentLoaded", function () {
     revealCardsOnScroll(); // Para checar se já estão visíveis ao carregar
 });
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
 
-    
-    
+  document.querySelectorAll('.textoServicos, .imagem').forEach((element) => {
+    observer.observe(element);
+  });
+
