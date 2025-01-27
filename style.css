@@ -322,15 +322,13 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: row;
-  /* Mantém em linha em telas grandes */
   padding: 50px;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  /* Permite que os elementos se ajustem */
   text-align: center;
-  position: fixed; /* Fixando o rodapé no fundo */
-  bottom: 0;
+  margin-top: auto; /* Faz com que o rodapé vá para a parte inferior */
+  width: 100%;
 }
 
 /* Quando a tela for menor que 768px (exemplo), os elementos ficam na vertical */
@@ -344,13 +342,13 @@ body {
 
   .rodapé img {
     margin-bottom: 15px;
-    /* Adiciona espaçamento entre os elementos */
   }
 
   .rodapé img.hide-on-mobile {
     display: none;
   }
 }
+
 
 .whatsapp-link {
   color: white !important;
