@@ -329,6 +329,8 @@ body {
   flex-wrap: wrap;
   /* Permite que os elementos se ajustem */
   text-align: center;
+  position: fixed; /* Fixando o rodapé no fundo */
+  bottom: 0;
 }
 
 /* Quando a tela for menor que 768px (exemplo), os elementos ficam na vertical */
