@@ -320,18 +320,19 @@ body {
 .rodapé {
   background-image: url(componentes/img/Picture3.png);
   background-size: cover;
+  background-position: center center; /* Centraliza a imagem de fundo */
   display: flex;
   flex-direction: row;
-  /* Mantém em linha em telas grandes */
   padding: 50px;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  /* Permite que os elementos se ajustem */
   text-align: center;
+  width: 100%;
+  box-sizing: border-box; /* Inclui o padding no cálculo de tamanho */
 }
 
-/* Quando a tela for menor que 768px (exemplo), os elementos ficam na vertical */
+/* Quando a tela for menor que 768px, os elementos ficam na vertical */
 @media (max-width: 768px) {
   .rodapé {
     flex-direction: column;
@@ -349,6 +350,14 @@ body {
     display: none;
   }
 }
+
+/* Ajustes para telas menores (menos de 600px), para melhorar o visual */
+@media (max-width: 600px) {
+  .rodapé {
+    padding: 15px;
+  }
+}
+
 
 .whatsapp-link {
   color: white !important;
