@@ -653,23 +653,26 @@ body {
   }
 
   .textoServicos {
-    order: 1;
+    text-align: left; 
+    hyphens: auto;
+    word-wrap: break-word;
   }
 }
 
 
 /* Texto */
 ul {
-  font-size: 20px;
+  font-size: 20px;    
   line-height: 1.8;
   margin: 0;
   padding: 0;
-  list-style: circle;
+  list-style: square;
 }
 
 h2 {
   font-size: 32px;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 /* Responsividade */
