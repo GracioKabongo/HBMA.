@@ -317,8 +317,10 @@ body {
   color: #ffff;
 }
 
+
+
 .rodapé {
-  background-image: url(componentes/img/Picture3.png);
+  background-image: url(componentes/img/Picture6.png);
   background-size: cover;
   background-position: center center; /* Centraliza a imagem de fundo */
   display: flex;
