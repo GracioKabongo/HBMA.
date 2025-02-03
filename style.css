@@ -453,10 +453,48 @@ body {
   cursor: pointer;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.479);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
 
-.service-card:hover {
-  transform: scale(1.05);
+.card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; /* Mantém os elementos centralizados */
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #3e515c;
+}
+
+.card-text {
+  flex-grow: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center;
+  text-align: center;
+  min-height: 80px; /* Garante altura mínima para evitar desalinhamento */
+}
+
+.saiba-mais {
+  color: #3e515c;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.saiba-mais:hover {
+  text-decoration: underline;
 }
 
 /* Efeito de luz */
@@ -474,25 +512,12 @@ body {
   transition: opacity 0.3s ease;
 }
 
-/* A luz aparece dinamicamente no hover */
 .service-card:hover::before {
   opacity: 1;
 }
 
-/* Estilo para o link "Saiba mais" */
-.saiba-mais {
-  display: inline-block;
-  margin-top: 10px;
-  color: #516d7d;
-  /* Cor da seta */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.saiba-mais:hover {
-  text-decoration: underline;
+.service-card:hover {
+  transform: scale(1.05);
 }
 
 .section2 {
@@ -561,17 +586,28 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: url(componentes/img/pexels-yankrukov-8866736.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.7;
-  /* Ajuste a transparência entre 0.0 (totalmente transparente) e 1.0 (opaco) */
   z-index: 1;
-  /* Certifica-se de que a imagem de fundo fique atrás do conteúdo */
 }
+
+@media (min-width: 1920px) {
+  .background::before {
+    background-size: contain; /* Ajusta melhor em telas grandes */
+  }
+}
+
+@media (min-width: 2560px) {
+  .background::before {
+    background-size: 100% 100%; /* Força o preenchimento total da tela */
+  }
+}
+
 
 .background>* {
   position: relative;
@@ -584,11 +620,43 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Centraliza melhor os itens */
   padding: 50px;
   gap: 30px;
   min-height: 700px;
 }
+
+/* Ajustes para telas grandes */
+@media (min-width: 1920px) {
+  .servico {
+    gap: 15px; /* Reduz a distância entre texto e imagem */
+    padding: 50px 10%;
+  }
+
+  .textoServicos {
+    max-width: 50%; /* Mantém o texto mais próximo da imagem */
+  }
+
+  .imagem img {
+    max-width: 450px; /* Evita que a imagem fique muito grande */
+  }
+}
+
+@media (min-width: 2560px) {
+  .servico {
+    gap: 10px; /* Aproxima ainda mais os elementos */
+    padding: 50px 15%;
+  }
+
+  .textoServicos {
+    max-width: 45%;
+  }
+
+  .imagem img {
+    max-width: 400px;
+  }
+}
+
 
 .textoServicos, .imagem {
   flex: 1;
@@ -670,10 +738,25 @@ ul {
 }
 
 h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  font-weight: bold;
+  font-size: clamp(28px, 2vw, 32px); /* Ajusta dinamicamente entre 28px e 32px */
+  margin-bottom: 10px; /* Reduz a margem inferior para telas grandes */
+  white-space: normal; /* Garante que o título quebre corretamente */
+  text-align: center; /* Mantém alinhado em todas as telas */
+  word-spacing: normal; /* Evita espaçamentos excessivos */
 }
+
+@media (min-width: 1920px) {
+  h2 {
+    font-size: 30px; /* Mantém um tamanho fixo para telas 2K */
+  }
+}
+
+@media (min-width: 2560px) {
+  h2 {
+    font-size: 32px; /* Ajusta para telas 4K sem espalhar as palavras */
+  }
+}
+
 
 /* Responsividade */
 @media (max-width: 768px) {
