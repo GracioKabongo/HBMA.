@@ -334,13 +334,6 @@ body {
   box-sizing: border-box; /* Inclui o padding no cálculo de tamanho */
 }
 
-@media (min-width: 1920px) { 
-  .rodapé {
-    margin-top: auto; /* Mantém o footer no final da página */
-  }
-}
-
-
 /* Quando a tela for menor que 768px, os elementos ficam na vertical */
 @media (max-width: 768px) {
   .rodapé {
@@ -607,12 +600,15 @@ body {
 
 @media (min-width: 1920px) {
   .background::before {
-    height: 100vh; /* Garante que cubra toda a tela */
-    background-size: 100% 100vh; /* Ajusta apenas para telas grandes */
+    background-size: contain; /* Ajusta melhor em telas grandes */
   }
 }
 
-
+@media (min-width: 2560px) {
+  .background::before {
+    background-size: 100% 100%; /* Força o preenchimento total da tela */
+  }
+}
 
 
 .background>* {
@@ -809,14 +805,6 @@ h2 {
   z-index: 3; 
   /* Para garantir que fique atrás do conteúdo */
 }
-
-@media (min-width: 1920px) { 
-  .rigthBlog::before {
-    height: 100vh; /* Garante que cubra toda a tela */
-    background-size: 100% 100vh; /* Ajusta apenas para telas grandes */
-  }
-}
-
 
 .rigthBlog {
   position: relative;
